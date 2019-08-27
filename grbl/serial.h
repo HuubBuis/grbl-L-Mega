@@ -33,6 +33,72 @@
 #define SERIAL_NO_DATA 0xff
 
 
+#if defined SERIAL1
+// Serial port interrupt vectors
+  #define SERIAL_RX USART1_RX_vect
+  #define SERIAL_UDRE USART1_UDRE_vect
+  //Serial port register definition
+  #define  UCSRXA UCSR1A
+  #define  UBRRXH UBRR1H
+  #define  UBRRXL UBRR1L
+  #define  UCSRXB UCSR1B
+  #define  UDRIEX UDRIE1
+  #define  UDRX UDR1
+  #define  U2XX U2X1
+  #define  RXCIEX RXCIE1
+  #define  TXENX TXEN1
+  #define  RXENX RXEN1
+#elif defined SERIAL2
+  // Serial port interrupt vectors
+  #define SERIAL_RX USART2_RX_vect
+  #define SERIAL_UDRE USART2_UDRE_vect
+  //Serial port register definition
+  #define  UCSRXA UCSR2A
+  #define  UBRRXH UBRR2H
+  #define  UBRRXL UBRR2L
+  #define  UCSRXB UCSR2B
+  #define  UDRIEX UDRIE2
+  #define  UDRX UDR2
+  #define  U2XX U2X2
+  #define  RXCIEX RXCIE2
+  #define  TXENX TXEN2
+  #define  RXENX RXEN2
+#elif defined SERIAL3
+  // Serial port interrupt vectors
+  #define SERIAL_RX USART3_RX_vect
+  #define SERIAL_UDRE USART3_UDRE_vect
+  //Serial port register definition
+  #define  UCSRXA UCSR3A
+  #define  UBRRXH UBRR3H
+  #define  UBRRXL UBRR3L
+  #define  UCSRXB UCSR3B
+  #define  UDRIEX UDRIE3
+  #define  UDRX UDR3
+  #define  U2XX U2X3
+  #define  RXCIEX RXCIE3
+  #define  TXENX TXEN3
+  #define  RXENX RXEN3
+#else
+  //Atleast one serial port should be defined
+  #ifndef SERIAL0	
+     #warning No serial port defined, using SERIAL0
+  #endif
+  // Serial port interrupt vectors
+  #define SERIAL_RX USART0_RX_vect
+  #define SERIAL_UDRE USART0_UDRE_vect
+  //Serial port register definition
+  #define  UCSRXA UCSR0A
+  #define  UBRRXH UBRR0H
+  #define  UBRRXL UBRR0L
+  #define  UCSRXB UCSR0B
+  #define  UDRIEX UDRIE0
+  #define  UDRX UDR0
+  #define  U2XX U2X0
+  #define  RXCIEX RXCIE0
+  #define  TXENX TXEN0
+  #define  RXENX RXEN0
+#endif
+
 void serial_init();
 
 // Writes one byte to the TX serial buffer. Called by main program.

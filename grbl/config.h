@@ -29,6 +29,14 @@
 #define config_h
 #include "grbl.h" // For Arduino IDE compatibility.
 
+// If you have a USB to serial (HC04) or Wifi (ESP8266) to serial adapter connected, you have to disconnect this adapter before flashing GRBL.
+// To avoid this, connect the adapter to serial port 1,2 or 3 and tell grbl to use this serial port.
+// You can than flash using the USB port connected to USART0 and communicate to grbl by an other serial port.
+//  Define the serial port to use, the mega2560 has four (USART0 .. USART3) usart0 is the default. Uncomment just one
+#define SERIAL0		//uncomment to use USART0 TX0/RX0 (default)
+//#define SERIAL1		//uncomment to use USART1 TX1/RX1
+//#define SERIAL2		//uncomment to use USART2 TX2/RX2
+//#define SERIAL3		//uncomment to use USART3 TX3/RX3
 
 // Define CPU pin map and default settings.
 // NOTE: OEMs can avoid the need to maintain/update the defaults.h and cpu_map.h files and use only

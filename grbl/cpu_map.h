@@ -28,9 +28,7 @@
 
 #ifdef CPU_MAP_2560_INITIAL // (Arduino Mega 2560) Working @EliteEng
 
-  // Serial port interrupt vectors
-  #define SERIAL_RX USART0_RX_vect
-  #define SERIAL_UDRE USART0_UDRE_vect
+  // Serial port configuration is moved to config.h
 
   // Define step pulse output pins. NOTE: All step bit pins must be on the same port.
   #define STEP_DDR      DDRA

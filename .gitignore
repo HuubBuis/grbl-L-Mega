@@ -5,3 +5,12 @@
 *.d
 
 README.md
+.vs/grbl-Mega-serial/v14/.atsuo
+*.eep
+*.lss
+*.map
+*.srec
+*.mk
+Debug/Makefile
+grbl-Mega-serial.componentinfo.xml
+grbl-Mega-serial.cproj
